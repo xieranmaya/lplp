@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+		<script src="js/jquery.mobile-1.4.0.min.js"></script>
+		<script type="text/javascript" src="js/jquery.cookie.js"></script>
+		<script type="text/javascript" src="js/mobile.js"></script>
+		<link rel="stylesheet" href="styles/themes/jquery.mobile.structure-1.4.0.min.css" /> 
+		<link rel="stylesheet" href="styles/themes/jquery.mobile.icons.min.css" /> 
+		<link rel="stylesheet" href="styles/themes/mbl.css" /> 			
+		<link rel="stylesheet" type="text/css" href="styles/mobile.css"/>
+	</head>
+	<body>
+		
+			<header data-role="header" data-position="fixed">
+				<a data-rel="back" class="page-back ui-btn-icon-notext"><img src="img/ic_action_previous_item.png" /></a>
+				<h1 class="header"></h1>
+				<a href="#panel" class="ui-btn-right ui-btn ui-btn-inline ui-icon-bullets page-menu"><img src="img/more.png" /></a>			
+			</header>
+			<!--<div id="chooseChannel">
+		        <ul data-role="listview" data-theme="a" class="ui-listview">
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li ">
+		            	<a href="#anchor1" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第一章</a>
+		            </li>
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li">
+		            	<a href="#anchor2" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第二章</a>
+		            </li>
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li">
+		            	<a href="#anchor3" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第三章</a>
+		            </li>
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li">
+		            	<a href="#anchor4" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第四章</a>
+		            </li>
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li">
+		            	<a href="#anchor5" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第五章</a>
+		            </li>
+		            <li data-icon="false" data-corners="false" data-shadow="true" data-iconshadow="true" data-wrapperels="div" data-iconpos="right" data-theme="a" class="ui-btn ui-li">
+		            	<a href="#anchor6" rel="external" class="ui-link-inherit  ui-btn ui-btn-a">第六章</a>
+		            </li>
+		        </ul>
+    		</div>-->
+			<nav data-role="panel"id="panel" data-display="overlay" data-position="right" data-position-fixed="true">
+				<ul class="listview" data-role="listview" data-icon="false">
+					<li data-role="list-divider" class="logo"><img src="img/logo.png" /></li>
+					<li><a style="color:#CCCCCC;" href="#" rel="external", data-ajax="false">首页</a></li>
+					<li class="menu-li-select" ><a href="#" rel="external", data-ajax="false">课程学习</a></li>
+					<li><a style="color:#CCCCCC;" href="#" rel="external", data-ajax="false">活动资讯</a></li>
+					<li><a style="color:#CCCCCC;" href="#" rel="external", data-ajax="false">增值服务</a></li>
+				</ul>
+			</nav>
+		<div class="container">Loading...</div>
+		<footer>
+			<div>Copyright&nbsp;&copy;&nbsp;Flaming Information Technology Co.,LTD. All Rights Reserved. </div>
+		</footer>		
+	</body>
+	<script type="text/template" id="chapter_tpl">
+		{{#result}}
+			<div id="anchor{{math @index "+" 1}}">
+				<a target="_self" href="item_mobile.html#chapter={{chapter_id}}">
+				<div class="nav-title">
+					<span class="p1">0{{math @index "+" 1}}</span>
+					<span class="p2">{{delleadingnum chapter_name_cn}}</span>
+					<span class="p3">{{chapter_name_en}}</span>
+				</div>
+				<div class="image">
+					<img src="{{summary_img}}">
+				</div>
+				<div class="text_container">
+					{{{summary_cn}}}
+				</div>
+				</a>
+			</div>
+		{{/result}}
+	</script>
+	<script src="js/handlebars.js"></script>
+	<script>
+	$(function(){
+		var tpl = Handlebars.compile($("#chapter_tpl").html());
+		var book_id = location.hash.match(/book=(\d*)/)[1];
+		$.get("http://www.fangmingdesign.cn/teaching/Platform/index.php/book_service/chapter_list",{book:book_id},null,'json').success(function(data){
+			console.log(data);
+			var chapterHtml = tpl(data);
+			$(".container").html(chapterHtml);
+		});
+		$.get("http://www.fangmingdesign.cn/teaching/Platform/index.php/book_service/book",{book:book_id},null,'json').success(function(data){
+			$("title").text(data.result[0].book_name_cn);
+			$("h1").text(data.result[0].book_name_cn);
+		});
+	});
+	</script>
+</html>

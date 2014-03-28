@@ -1,0 +1,916 @@
+body{
+	background-attachment: fixed; /* prevent screen flash in IE6 */
+	font-size:14px;
+}
+
+a{
+	text-decoration:none;
+	color:#000000;
+}
+/*#link a:link{
+	color:#FF0000;
+}
+#link a:visited{
+	color:#cccccc;
+}
+#link a:hover{
+	color:#000099;
+}
+#link a:active{
+	color:#009900;
+}*/
+
+ul,li{list-style:none;}
+
+.anchor{
+	position:absolute;
+	top:-100px;
+}
+
+.hide{
+	display:none;
+}
+
+.txt_spread{
+	height:16px;
+	width:35px;
+	color:#458aae;
+	border: 1px solid #458aae;
+    -moz-border-radius: 3px;      /* Gecko browsers */
+    -webkit-border-radius: 3px;   /* Webkit browsers */
+    border-radius:3px;
+	position:absolute;
+	bottom:16px;
+	right:35px;
+	line-height:16px;
+	text-align:center;
+	font-size:12px;
+	cursor:pointer;
+}
+.txt_fold{
+	height:16px;
+	width:35px;
+	color:#458aae;
+	border: 1px solid #458aae;
+    -moz-border-radius: 3px;      /* Gecko browsers */
+    -webkit-border-radius: 3px;   /* Webkit browsers */
+    border-radius:3px;
+	position:absolute;
+	bottom:16px;
+	right:35px;
+	line-height:16px;
+	text-align:center;
+	font-size:12px;
+	cursor:pointer;
+}
+
+.spread{
+	position:absolute;
+	bottom:16px;
+	right:13px;
+	width:18px;
+	height:18px;
+	cursor:pointer;
+	overflow:hidden;
+	z-index:2;
+}
+
+.achieve_s_fold{
+	display:none;
+}
+#header{
+	width: 960px; 
+	text-align: left; 
+	height: 97px; 
+	margin: 0px auto; 
+	z-index:100; 
+	_position: relative ; 
+	_top:0px;
+	background-color:#ffffff; 
+}
+
+/*顶部固定div*/
+#float{
+	width: 960px; 
+	float: left; 
+	display: block; 
+	z-index: 100; 
+	overflow: visible; 
+	position: fixed; 
+	top: 0px; /* position fixed for IE6 */ 
+	_position: absolute;
+	_top: expression(documentElement.scrollTop + "px"); 
+	background-repeat: no-repeat; 
+	background-position: right; 
+	height: 100px; 
+	background-color:#ffffff;
+	border-bottom:20px solid #ffffff;
+}
+
+#inner{
+	margin:0 auto;
+	height:97px;
+	width:960px;
+	border-bottom:3px solid #999999;
+}
+#logo{
+	position:relative;
+	top:30px;
+	left:24px;
+}
+.navigation_div{
+	position:relative;
+	height:97px;
+	width:570px;
+	top:-45px;
+	left:390px;
+	font-size:13px;
+	line-height:113px;
+}
+.menu{
+	position:absolute;
+	top:44px;	
+}
+.menu li{
+	float:left;
+	position:relative;
+	height:26px;
+	width:95px;
+}
+
+.menu li:hover a{
+	color:#458aae;
+}
+
+
+.menu li a,.menu li a:visited{
+	display:block;
+	text-align:right;
+	text-decoration: none;
+	width:93px;
+	height:30px;
+	line-height: 30px;
+	color:#000000;
+}
+.a_style{
+	font-size:15px;
+}
+.menu li:hover .a_style{
+	color:#458aae;
+}
+.menu li ul{
+	display:none;
+}
+
+.menu li ul li{
+	position:absolute;
+}
+
+.menu li:hover ul{
+display:block;
+	position:absolute;
+	left:0;
+	margin:0;
+}
+
+.menu li:hover ul li a{
+	display:block;
+	background-color: #ffffff;
+	color:#000;
+	width:95px;
+	border-top:0px;
+}
+.menu li:hover ul li a:hover {
+	color:#458aae;
+}
+
+
+/*中心介绍布局*/
+#center_introduction{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+	height:365px;
+	margin-top:23px;
+}
+.title{
+	position:absolute;
+	height:80px;
+	width:960px;
+}
+.p1{
+	position:absolute;font-size:50px;font-weight:bold;font-family:Arial Black;width:70px;height:80px;line-height:80px;color:#5c5c5c;left:10px;
+}
+.p2{
+	position:absolute;left:80px;top:20px;color:#458aae;font-size:20px;font-weight:bold;
+}
+.p3{
+	position:absolute;left:80px;top:43px;color:#5c5c5c;font-size:16px;font-weight:bold;
+}
+/*.title{
+	position:absolute;
+	width:84px;
+	height:20px;
+	line-height:20px;
+	background-color:#4589ae;
+	color:#ffffff;
+	text-align:center;
+}*/
+.vice_title{
+	position:absolute;
+	width:84px;
+	height:20px;
+	line-height:20px;
+	background-color:#4589ae;
+	color:#ffffff;
+	text-align:center;
+	left:85px;
+}
+#detail1{
+	position:absolute;
+	top:80px;
+	width:960px;
+	height:285px;
+}
+
+
+.intro_pic{
+	position:absolute;
+	left:10px;
+	height:285px;
+	width:430px;
+}
+#intro1{
+	position:absolute;height:140px;width:140px;
+}
+
+#intro2{
+	position:absolute;height:140px;width:140px;left:145px;
+}
+
+#intro3{
+	position:absolute;height:140px;width:140px;left:290px;
+}
+
+#intro4{
+	position:absolute;height:140px;width:140px;top:145px;
+}
+
+#intro5{
+	position:absolute;height:140px;width:140px;top:145px;left:145px;
+}
+
+#intro6{
+	position:absolute;height:140px;width:140px;top:145px;left:290px;
+}
+
+.intro_text{
+	position:absolute;
+	display:table;
+	left:445px;
+	height:285px;
+	width:515px;
+	text-align:left;
+	font-size:15px;
+	background-color:#f7f7f7;
+}
+.intro_text div{
+	width:475px;
+	padding:0 50px;
+	vertical-align:middle;
+	display:table-cell;
+	text-align:left;
+}
+
+/*队伍建设-工作人员 布局*/
+#staff{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+	height:445px;
+}
+
+#detail2{
+	position:absolute;
+	height:365px;
+	width:960px;
+	top:80px;
+}
+.staff_fold{
+	display:none;
+}
+.staff1{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+}
+.staff2{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	left:240px;
+}
+.staff3{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	left:480px;
+}
+.staff4{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	left:720px;
+}
+.staff5{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	top:366px;
+}
+.staff6{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	left:240px;
+	top:366px;
+}
+.staff7{
+	position:absolute;
+	height:365px;
+	width:239px;
+	background:#f7f7f7;
+	left:480px;
+	top:366px;
+}
+
+.photo{
+	position:absolute;
+	left:22px;
+	top:15px;
+}
+
+.name{
+	color:#458aae;
+	position:absolute;
+	top:115px;
+	left:125px;
+}
+.person_intro{
+	position:absolute;
+	top:144px;
+	width:195px;
+	height:100px;
+	padding:0 22px;
+}
+
+/*队伍建设-访问学者 布局*/
+#scholars{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+	height:811px;
+}
+
+#detail3{
+	position:absolute;
+	top:80px;
+	height:731px;
+	width:960px;
+}
+.hans{
+	color:#458aae;
+	position:absolute;
+	top:100px;
+	left:125px;
+}
+
+/*合作伙伴*/
+#partner{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+}
+.mate{
+	position:absolute;
+	top:80px;
+	height:100px;
+	width:239px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;
+}
+.mate div{
+		display:table-cell;
+		text-align:center;
+		vertical-align:middle;
+		height:100px;
+		width:239px;
+}
+/*.partner2{
+	position:absolute;
+	height:100px;
+	width:239px;
+	left:240px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;	
+}
+.partner3{
+	position:absolute;
+	height:100px;
+	width:239px;
+	left:480px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;	
+}
+.partner4{
+	position:absolute;
+	height:100px;
+	width:239px;
+	left:720px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;	
+}
+.partner5{
+	position:absolute;
+	height:100px;
+	width:239px;
+	top:181px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;
+}*/
+
+
+/*网络资源*/
+#resource{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+}
+.re{
+	position:absolute;
+	top:80px;
+	height:80px;
+	width:239px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;
+}
+.re div{
+		display:table-cell;
+		text-align:center;
+		vertical-align:middle;
+		height:80px;
+		width:239px;
+}
+/*友情链接*/
+#link{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+}
+
+.link{
+	position:absolute;
+	top:80px;
+	height:80px;
+	width:239px;
+	display:table;
+	vertical-align:middle;
+	background:#f7f7f7;
+	color:#000000;
+}
+.link div{
+		display:table-cell;
+		text-align:center;
+		vertical-align:middle;
+		height:80px;
+		width:239px;
+}
+
+
+/*理论成果*/
+.achieve{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+}
+.achieve_title{
+	position:relative;
+	height:80px;
+}
+
+.detail4{
+	position:relative;
+	margin:0 auto;
+	width:850px;
+	padding:50px 55px;
+	margin-top:1px;
+	background-color:#f7f7f7;
+}
+.project{
+	position:relative;
+	margin:0 auto;
+	width:850px;
+	padding:50px 55px;
+	margin-top:1px;
+	background-color:#f7f7f7;
+}
+
+/*研究方向*/
+.research_area{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+	height:490px;
+}
+
+#detail5{
+	position:absolute;
+	height:410px;
+	width:960px;
+	top:80px;
+	background-color:#f7f7f7;
+}
+.area_pic{
+	height:410px;width:410px;position:absolute;
+}
+.area_des{
+	position:absolute;
+	display:table;
+	left:445px;
+	height:410px;
+	width:515px;
+	text-align:left;
+	font-size:15px;
+}
+.area_des div{
+	width:475px;
+	padding:0 50px;
+	vertical-align:middle;
+	display:table-cell;
+	text-align:left;
+}
+
+
+/*成果展示*/
+#innovation{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	height:480px;
+	margin-top:23px;
+}
+
+.project_name{
+	color:#458aae;
+	font-size:17px;
+}
+
+.detail6{
+	position:absolute;
+	height:400px;
+	width:960px;
+	background:#f7f7f7;
+	top:80px;
+}
+.img{
+	position:absolute;
+	width:480px;
+	height:400px;
+	display:table;
+	vertical-align:middle;
+}
+
+.img div{
+	width:480px;
+	height:400px;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+}
+
+.description{
+	position:absolute;
+	left:480px;
+	width:450px;
+	padding-right:30px;
+	height:400px;
+	display:table;
+	vertical-align:middle;
+}
+
+.description div{
+	width:480px;
+	height:400px;
+	text-align:left;
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.detail7{
+	position:relative;
+	height:400px;
+	width:960px;
+	background-color:#f7f7f7;
+	margin:0 auto;
+	margin-top:10px;
+	display:none;
+}
+/*服务设计*/
+#service{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	height:480px;
+}
+.detail8{
+	position:absolute;
+	height:400px;
+	width:960px;
+	background:#f7f7f7;
+	top:80px;
+}
+.detail9{
+	position:relative;
+	height:400px;
+	width:960px;
+	background-color:#f7f7f7;
+	margin:0 auto;
+	margin-top:10px;
+	display:none;
+}
+/*交互设计*/
+#interaction{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	height:480px;
+}
+.detail10{
+	position:absolute;
+	height:400px;
+	width:960px;
+	background:#f7f7f7;
+	top:80px;
+}
+.detail11{
+	position:relative;
+	height:400px;
+	width:960px;
+	background-color:#f7f7f7;
+	margin:0 auto;
+	margin-top:10px;
+	display:none;
+}
+
+/*交互媒体设计*/
+#media{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	height:480px;
+}
+.detail12{
+	position:absolute;
+	height:400px;
+	width:960px;
+	background:#f7f7f7;
+	top:80px;
+}
+.detail13{
+	position:relative;
+	height:400px;
+	width:960px;
+	background-color:#f7f7f7;
+	margin:0 auto;
+	margin-top:10px;
+	display:none;
+}
+
+.detail14{
+	position:relative;
+	margin:0 auto;
+	width:900px;
+	padding:50px 30px;
+	margin-top:1px;
+	background-color:#f7f7f7;
+}
+/*重要会议*/
+#meeting{
+	position:relative;
+	margin:0 auto;
+	width:960px;
+	height:330px;
+	margin-top:23px;
+}
+
+.detail15{
+	position:absolute;
+	height:250px;
+	width:960px;
+	background:#f7f7f7;
+	top:80px;
+}
+.img1{
+	position:absolute;
+	width:250px;
+	height:250px;
+	display:table;
+	vertical-align:middle;
+}
+
+.img1 div{
+	width:250px;
+	height:250px;
+	text-align:center;
+	vertical-align:middle;
+	display:table-cell;
+}
+
+.description1{
+	position:absolute;
+	left:250px;
+	width:710px;
+	height:250px;
+	display:table;
+	vertical-align:middle;
+}
+
+.description1 div{
+	width:710px;
+	height:250px;
+	text-align:left;
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.detail16{
+	position:relative;
+	height:250px;
+	width:960px;
+	background-color:#f7f7f7;
+	margin:0 auto;
+	margin-top:10px;
+	display:none;
+}
+/*相关书籍*/
+#book_table tr td{
+	padding:0 10px;
+	border:1px solid #999999;
+}
+
+
+/*实验室*/
+#about{
+	margin:0 auto;
+	position:relative;
+	width:960px;
+	margin-top:23px;
+	height:479px;
+}
+.lab_pic{
+	position:absolute;
+	display:table;
+	height:458px;
+	width:480px;
+}
+.lab_pic div{
+	vertical-align:middle;
+	display:table-cell;
+	text-align:center;
+}
+#director{
+	position:relative;
+	width:960px;
+	margin:0 auto;
+	height:481px;
+}
+.detail17{
+	position:absolute;
+	height:200px;
+	width:960px;
+	background: #f7f7f7;	
+}
+.detail18{
+top:201px;
+}
+
+.detail23{
+	position:absolute;
+	height:401px;
+	width:960px;
+	top:80px;
+}
+
+.director_pic{
+	position:absolute;
+	left:35px;
+	top:25px;
+}
+.resume{
+	position:absolute;
+	left:247px;
+	height:200px;
+	width:700px;
+	display:table;
+}
+.resume div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:left;
+}
+.act_pic{
+	position:relative;
+	width:850px;
+	text-align:center;
+}
+
+/*联系方式*/
+#contact{
+	position:relative;
+	width:960px;
+	margin:0 auto;
+	height:481px;
+	overflow:hidden;
+	margin-top:23px;
+}
+.detail19{
+	position:absolute;
+	height:200px;
+	width:480px;
+	top:80px;
+	background: #f7f7f7;	
+}
+.detail20{
+	left:481px;
+}
+.detail21{
+	top:281px;
+}
+.detail22{
+	top:281px;
+	left:481px;
+}
+
+.code_intro{
+	position:absolute;
+	left:225px;
+	height:200px;
+	width:230px;
+	display:table;
+}
+.code_intro div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:left;
+}
+
+.copr{
+	position:relative;
+	height:50px;
+	width:960px;
+	text-align:center;
+	margin:0 auto;
+	margin-top:30px;
+	display:table;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #CCC;
+}
+
+.copr div{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	font-size:12px;
+}
+/*
+ * phone version
+ */
+.phone_version{
+	display:block;
+	position:absolute;
+	height:25px;
+	right:14px;
+	top:5px;
+	padding-right:22px;
+	padding-top:5px;
+	background:url("../img/ic_action_phone.png") no-repeat;
+	background-position:145px;
+	z-index:9999;
+	cursor: pointer;
+}
+#header{
+	position: relative;
+}
