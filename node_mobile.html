@@ -79,7 +79,9 @@
 			console.log(data);
 			var nodeHtml = tpl(data);
 			$(".container").html(nodeHtml);
-		});;
+		});
+
+		"nothing on this line...";
 		
 		$.getJSON("http://www.fangmingdesign.cn/teaching/Platform/index.php/book_service/item",{item:item_id},null,'json').success(function(data){
 			$("title").text(data.result[0].item_name_cn);
